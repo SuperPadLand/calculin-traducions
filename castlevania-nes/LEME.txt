@@ -1,0 +1,182 @@
+================================================================
+  CASTLEVANIA (NES) - TRADUCIÓN AO GALEGO  v0.1  (26/08/2026)
+  Calculín Traducións
+================================================================
+
+
+----------------------------------------------------------------
+  GALEGO
+----------------------------------------------------------------
+
+AGRADECEMENTOS
+--------------
+Esta tradución non existiría sen o traballo de WAVE (Sergio López
+Cantero, Traduccións Wave). Usáronse as súas ferramentas e mais a
+súa documentación:
+
+  - Hextractor, a ferramenta de extracción e inserción de texto
+    (licenza MIT).
+  - As táboas de caracteres (.tbl) e os offsets (.off) do seu
+    repositorio de proxectos, que son a parte máis traballosa de
+    todo isto e que el liberou para quen queira usalos.
+  - O tile do "É" que debuxou, reaproveitado aquí tal cal.
+
+  https://github.com/sewave/hextractor
+  https://github.com/sewave/translations
+
+Moitas grazas por abrir o traballo. Sen iso, isto serían meses.
+
+
+ROM DE DESTINO
+--------------
+  Castlevania (USA).nes      [NON vale a Rev 1 nin a europea]
+  MD5    : 00d93c9f6b8aefb8b6c02b20147df4ec
+  CRC32  : 39C879BB
+  Tamaño : 131088 bytes
+
+Aquí NON se distribúe a ROM, só o parche. A copia do xogo tes que
+poñela ti.
+
+
+COMO APLICAR O PARCHE
+---------------------
+  1. Comproba que a túa ROM é a de arriba (MD5 ou CRC32).
+  2. Aplica o parche:
+       castlevania_galego.bps  <- recomendado. Vale Flips, beat ou
+         calquera aplicador web. Leva sumas de comprobación, así
+         que avisa se a ROM non é a correcta.
+       castlevania_galego.ips  <- para aplicadores antigos. Ollo:
+         o formato IPS non comproba nada; se a ROM non é a boa
+         obterás un xogo roto sen ningún aviso.
+  3. A ROM resultante debe dar:
+       MD5   : 6edf9f9c42a97b3d785b6e5381a49b48
+       CRC32 : 3AF93FB9
+
+
+QUE SE TRADUCIU
+---------------
+  - Pantalla de título e avisos legais (agás as razóns sociais).
+  - Marcador: TEMPO, FASE, XOGADOR, XEFE, PUNTOS.
+  - Fin de partida: FIN XOGO / SEGUIR / FIN.
+  - Créditos finais: etiquetas e despedida. Os nomes do reparto
+    son parodias de actores reais: son nomes propios e non se
+    tocaron.
+
+
+ROMHACKING GRÁFICO
+------------------
+A fonte de Castlevania non ten X nin Z, e o galego precisa as dúas
+(XOGADOR, XEFE, LICENZA). Debuxáronse de novo:
+
+  - O X ocupa o tile do K no marcador (tres bancos).
+  - O Z ocupa o tile do W na pantalla de título.
+  - O É é o tile de Wave, reaproveitado.
+
+Ningunha das letras sacrificadas aparece nos textos deste xogo.
+
+Os offsets de Wave son doutra revisión da ROM (el usou a Rev 1),
+así que houbo que reancoralos á Rev 0 buscando o texto orixinal
+por patrón de bytes.
+
+
+ESTADO
+------
+v0.1. Xogo probado só nas primeiras pantallas. Se atopas algún
+texto roto ou algunha letra rara, abre unha incidencia.
+
+
+LICENZA
+-------
+A tradución (textos e tiles novos) distribúese para uso libre e
+non comercial. Castlevania é propiedade de Konami; este proxecto
+non ten relación ningunha coa empresa e non distribúe o xogo.
+
+
+================================================================
+  CASTELLANO
+================================================================
+
+AGRADECIMIENTOS
+---------------
+Esta traducción no existiría sin el trabajo de WAVE (Sergio López
+Cantero, Traducciones Wave). Se han usado sus herramientas y su
+documentación:
+
+  - Hextractor, la herramienta de extracción e inserción de texto
+    (licencia MIT).
+  - Las tablas de caracteres (.tbl) y los offsets (.off) de su
+    repositorio de proyectos, que son la parte más costosa de todo
+    esto y que él liberó para quien quiera usarlos.
+  - El tile de la "É" que dibujó, reaprovechado aquí tal cual.
+
+  https://github.com/sewave/hextractor
+  https://github.com/sewave/translations
+
+Muchas gracias por abrir el trabajo. Sin eso, esto serían meses.
+
+
+ROM DE DESTINO
+--------------
+  Castlevania (USA).nes      [NO vale la Rev 1 ni la europea]
+  MD5    : 00d93c9f6b8aefb8b6c02b20147df4ec
+  CRC32  : 39C879BB
+  Tamaño : 131088 bytes
+
+Aquí NO se distribuye la ROM, solo el parche. La copia del juego
+la tienes que poner tú.
+
+
+CÓMO APLICAR EL PARCHE
+----------------------
+  1. Comprueba que tu ROM es la de arriba (MD5 o CRC32).
+  2. Aplica el parche:
+       castlevania_galego.bps  <- recomendado. Vale Flips, beat o
+         cualquier aplicador web. Lleva sumas de comprobación, así
+         que avisa si la ROM no es la correcta.
+       castlevania_galego.ips  <- para aplicadores antiguos. Ojo:
+         el formato IPS no comprueba nada; si la ROM no es la
+         buena obtendrás un juego roto sin ningún aviso.
+  3. La ROM resultante debe dar:
+       MD5   : 6edf9f9c42a97b3d785b6e5381a49b48
+       CRC32 : 3AF93FB9
+
+
+QUÉ SE HA TRADUCIDO
+-------------------
+  - Pantalla de título y avisos legales (salvo las razones
+    sociales).
+  - Marcador: TEMPO, FASE, XOGADOR, XEFE, PUNTOS.
+  - Fin de partida: FIN XOGO / SEGUIR / FIN.
+  - Créditos finales: etiquetas y despedida. Los nombres del
+    reparto son parodias de actores reales: son nombres propios y
+    no se han tocado.
+
+
+ROMHACKING GRÁFICO
+------------------
+La fuente de Castlevania no tiene X ni Z, y el gallego necesita
+las dos (XOGADOR, XEFE, LICENZA). Se han dibujado de nuevo:
+
+  - La X ocupa el tile de la K en el marcador (tres bancos).
+  - La Z ocupa el tile de la W en la pantalla de título.
+  - La É es el tile de Wave, reaprovechado.
+
+Ninguna de las letras sacrificadas aparece en los textos de este
+juego.
+
+Los offsets de Wave son de otra revisión de la ROM (él usó la
+Rev 1), así que hubo que reanclarlos a la Rev 0 buscando el texto
+original por patrón de bytes.
+
+
+ESTADO
+------
+v0.1. Juego probado solo en las primeras pantallas. Si encuentras
+algún texto roto o alguna letra rara, abre una incidencia.
+
+
+LICENCIA
+--------
+La traducción (textos y tiles nuevos) se distribuye para uso libre
+y no comercial. Castlevania es propiedad de Konami; este proyecto
+no tiene ninguna relación con la empresa y no distribuye el juego.
