@@ -1,5 +1,5 @@
 ================================================================
-  CASTLEVANIA (NES) - TRADUCIÓN AO GALEGO  v0.1  (26/08/2026)
+  CASTLEVANIA (NES) - TRADUCIÓN AO GALEGO  v1.0  (28/08/2026)
   Calculín Traducións
 ================================================================
 
@@ -81,8 +81,11 @@ por patrón de bytes.
 
 ESTADO
 ------
-v0.1. Xogo probado só nas primeiras pantallas. Se atopas algún
-texto roto ou algunha letra rara, abre unha incidencia.
+v1.0. Xogo PROBADO ENTEIRO no emulador ares, de principio a fin,
+sen atopar ningún texto roto nin ningunha letra rara.
+
+Se aínda así atopas algo, abre unha incidencia indicando a
+pantalla e, se podes, unha captura.
 
 
 LICENZA
@@ -171,8 +174,11 @@ original por patrón de bytes.
 
 ESTADO
 ------
-v0.1. Juego probado solo en las primeras pantallas. Si encuentras
-algún texto roto o alguna letra rara, abre una incidencia.
+v1.0. Juego PROBADO ENTERO en el emulador ares, de principio a
+fin, sin encontrar ningún texto roto ni ninguna letra rara.
+
+Si aun así encuentras algo, abre una incidencia indicando la
+pantalla y, si puedes, una captura.
 
 
 LICENCIA

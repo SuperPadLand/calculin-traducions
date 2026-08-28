@@ -34,7 +34,7 @@ xogos serían meses de enxeñaría inversa en vez de días de tradución.
 
 | Xogo | Sistema | Versión | Estado |
 |---|---|---|---|
-| [Castlevania (USA)](castlevania-nes/) | NES | v0.1 | Xogable, probado só nas primeiras pantallas |
+| [Castlevania (USA)](castlevania-nes/) | NES | v1.0 | Completa. Probado enteiro en ares |
 
 ---
 
