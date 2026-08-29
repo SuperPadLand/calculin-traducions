@@ -29,7 +29,7 @@ Moitas grazas por abrir o traballo. Sen iso, isto serían meses.
 
 ROM DE DESTINO
 --------------
-  Castlevania (USA).nes      [NON vale a Rev 1 nin a europea]
+  Castlevania (USA) (Rev 0).nes   [NON vale a Rev 1 nin a europea]
   MD5    : 00d93c9f6b8aefb8b6c02b20147df4ec
   CRC32  : 39C879BB
   Tamaño : 131088 bytes
@@ -120,7 +120,7 @@ Muchas gracias por abrir el trabajo. Sin eso, esto serían meses.
 
 ROM DE DESTINO
 --------------
-  Castlevania (USA).nes      [NO vale la Rev 1 ni la europea]
+  Castlevania (USA) (Rev 0).nes   [NO vale la Rev 1 ni la europea]
   MD5    : 00d93c9f6b8aefb8b6c02b20147df4ec
   CRC32  : 39C879BB
   Tamaño : 131088 bytes
