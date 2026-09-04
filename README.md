@@ -17,8 +17,9 @@ Cantero, *Traduccións Wave*) liberou para todo o mundo. Úsanse as súas
 - [**Hextractor**](https://github.com/sewave/hextractor) — a ferramenta de
   extracción e inserción de texto, con licenza MIT.
 - [**sewave/translations**](https://github.com/sewave/translations) — as táboas
-  de caracteres (`.tbl`), os offsets (`.off`) e os tiles dos acentos. Iso é a
-  parte máis traballosa do romhacking e el deixouna aberta.
+  de caracteres (`.tbl`), os offsets (`.off`), os guións extraídos (`.ext`) e os
+  tiles dos acentos. Iso é a parte máis traballosa do romhacking e el deixouna
+  aberta.
 
 Moitas grazas por publicalo todo. Sen ese traballo previo, cada un destes
 xogos serían meses de enxeñaría inversa en vez de días de tradución.
