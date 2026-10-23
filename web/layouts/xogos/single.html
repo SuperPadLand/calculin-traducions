@@ -38,6 +38,8 @@
       {{ with $p.parcheador }}{{ partial "parcheador.html" $ }}{{ end }}
       {{ with $p.instalador }}{{ partial "instalador.html" $ }}{{ end }}
 
+      {{ partial "completada.html" . }}
+
       {{ partial "comentarios.html" . }}
     </div>
 
@@ -103,8 +105,6 @@
 {{ end }}
 
 {{ define "scripts" }}
-{{ if or .Params.parcheador .Params.comparacions }}
 {{ $js := resources.Get "js/ficha.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
-{{ end }}
 {{ end }}

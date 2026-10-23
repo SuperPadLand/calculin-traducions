@@ -23,7 +23,7 @@ As que aínda non teñen o selo están completas e pódense xogar, pero é máis
 ## Atopaches un erro? Queres axudar?
 
 - Se ves un texto cortado, unha falta ou algo sen traducir, [abre unha incidencia en GitHub]({{< param repo >}}/issues/new?template=erro-traducion.yml) indicando o xogo, a pantalla e, se podes, unha captura.
-- Se xogaches enteira unha tradución que aínda non está probada, cóntanolo nos comentarios da súa ficha e di onde: en que emulador ou en que consola. Así pode cambiar de selo.
+- Se xogaches enteira unha tradución, avísanos co formulario «Xogáchela enteira?» da súa ficha e di onde: en que emulador ou en que consola. Así pode levar o selo «probada por humanos» (e, se xa o ten, sumamos o teu emulador ou a túa consola á lista).
 
 {{< apoiar >}}
 

@@ -15,6 +15,31 @@
     });
   });
 
+  // ---------- «Xogáchela enteira?»: abre o formulario de GitHub xa cuberto ----------
+  document.querySelectorAll("[data-completada]").forEach((form) => {
+    const cal = form.querySelector("[name=cal]");
+    const etiqueta = form.querySelector("[data-etiqueta-cal]");
+    form.querySelectorAll("input[type=radio][name=onde]").forEach((r) => r.addEventListener("change", () => {
+      const hardware = r.value.startsWith("Hardware");
+      if (etiqueta) etiqueta.textContent = hardware ? "Que consola?" : "Que emulador?";
+      cal.placeholder = hardware ? cal.dataset.exemploHardware : cal.dataset.exemploEmulador;
+    }));
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const datos = new FormData(form);
+      const params = new URLSearchParams({
+        template: "partida-completada.yml",
+        title: `[Completada] ${form.dataset.xogo} · ${datos.get("cal").trim()}`,
+        xogo: form.dataset.xogo,
+        onde: datos.get("onde"),
+        cal: datos.get("cal").trim(),
+        version: form.dataset.version,
+        notas: datos.get("notas").trim(),
+      });
+      window.open(`${form.dataset.url}?${params}`, "_blank", "noopener");
+    });
+  });
+
   // ---------- Parcheador ----------
   const caixa = document.querySelector("[data-parcheador]");
   if (!caixa) return;

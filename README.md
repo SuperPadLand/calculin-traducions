@@ -74,6 +74,11 @@ Se atopas un texto cortado, unha letra rara ou algo que non se traduciu, abre
 unha **incidencia** (*issue*) indicando o xogo, a pantalla e, se podes, unha
 captura.
 
+Se xogaches enteira unha tradución, avísanos co formulario **«Completei o
+xogo»** (ou desde o botón «Xogáchela enteira?» da súa ficha na web), indicando
+se foi nun emulador (cal) ou na consola orixinal: así pode levar o selo
+«probada por humanos».
+
 ---
 
 ## Licenza · Licencia

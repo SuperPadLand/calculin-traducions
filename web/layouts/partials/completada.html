@@ -1,0 +1,53 @@
+{{/* «Xogáchela enteira?»: formulario que abre o de GitHub «Completei o xogo» xa cuberto.
+     Recibe a páxina do xogo. Os valores de xogo e onde teñen que coincidir coas opcións de
+     .github/ISSUE_TEMPLATE/partida-completada.yml. */}}
+{{ $p := .Params }}
+{{ $pc := eq $p.sistema "PC" }}
+<section class="bloque completada" aria-labelledby="completada">
+  <div class="bloque-cabeceira">
+    <h2 id="completada">Xogáchela enteira?</h2>
+    <span class="etiqueta-axuda">Axuda a probala</span>
+  </div>
+  <p class="completada-entrada">Se rematas o xogo con esta tradución, avísanos: así sabemos que se xogou de principio a fin e onde, e a ficha pode levar o selo «probada por humanos».</p>
+  <form class="formulario" data-completada
+        data-url="{{ site.Params.repo }}/issues/new"
+        data-xogo="{{ printf "%s (%s)" .Title $p.sistema }}"
+        data-version="{{ $p.version }}">
+    {{ if $pc }}
+    <input type="hidden" name="onde" value="PC">
+    <label class="campo">
+      <span>Onde o xogaches?</span>
+      <input type="text" name="cal" required placeholder="Linux, Steam Deck…">
+    </label>
+    {{ else }}
+    <fieldset class="campo">
+      <legend>Onde o xogaches?</legend>
+      <div class="opcions">
+        <label class="opcion">
+          <input type="radio" name="onde" value="Emulador" checked>
+          <span><strong>Emulador</strong><small>No ordenador, no móbil…</small></span>
+        </label>
+        <label class="opcion">
+          <input type="radio" name="onde" value="Hardware real (a consola orixinal)">
+          <span><strong>Hardware real</strong><small>Na consola de verdade</small></span>
+        </label>
+      </div>
+    </fieldset>
+    <label class="campo">
+      <span data-etiqueta-cal>Que emulador?</span>
+      <input type="text" name="cal" required
+             data-exemplo-emulador="Mesen 2, ares, RetroArch co núcleo Mesen…"
+             data-exemplo-hardware="NES PAL cun EverDrive N8, Famicom…"
+             placeholder="Mesen 2, ares, RetroArch co núcleo Mesen…">
+    </label>
+    {{ end }}
+    <label class="campo">
+      <span>Algo máis? <small>(opcional)</small></span>
+      <textarea name="notas" rows="3" placeholder="Que che pareceu, se algo che chamou a atención… Os erros, mellor nunha incidencia á parte."></textarea>
+    </label>
+    <div class="formulario-pe">
+      <button type="submit" class="boton boton-primario">Enviar o aviso</button>
+      <p class="nota-pe">Ábrese GitHub co formulario xa cuberto: só tes que revisalo, engadir unha captura do final se queres e premer <em>Create</em>. Precisas unha conta de GitHub (é de balde).</p>
+    </div>
+  </form>
+</section>

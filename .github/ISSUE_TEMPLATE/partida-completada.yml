@@ -1,0 +1,58 @@
+name: Completei o xogo
+description: Xogaches enteira unha tradución? Cóntanos onde, para que poida levar o selo «probada por humanos»
+title: "[Completada] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazas por xogala! Con este aviso sabemos que a tradución se completou de principio a fin e onde, e a ficha da web pode cambiar de selo.
+        Se atopaches algún erro polo camiño, mellor abre unha incidencia á parte para cada un.
+  - type: dropdown
+    id: xogo
+    attributes:
+      label: Xogo
+      options:
+        - Castlevania (NES)
+        - Suzerain (PC)
+        - Outro
+    validations:
+      required: true
+  - type: dropdown
+    id: onde
+    attributes:
+      label: Onde o xogaches?
+      options:
+        - Emulador
+        - Hardware real (a consola orixinal)
+        - PC
+    validations:
+      required: true
+  - type: input
+    id: cal
+    attributes:
+      label: Que emulador ou que consola?
+      description: "Por exemplo: Mesen 2, ares, RetroArch co núcleo Mesen… ou unha NES PAL cun EverDrive N8. En PC: Linux, Steam Deck…"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión da tradución
+      placeholder: "1.0"
+  - type: textarea
+    id: captura
+    attributes:
+      label: Captura do final
+      description: Opcional. Podes pegar ou arrastrar a imaxe aquí.
+  - type: textarea
+    id: notas
+    attributes:
+      label: Algo máis?
+      description: Opcional. Que che pareceu, se algo che chamou a atención…
+  - type: checkboxes
+    id: confirmo
+    attributes:
+      label: Confirmación
+      options:
+        - label: Xoguei o xogo de principio a fin coa tradución posta
+          required: true
