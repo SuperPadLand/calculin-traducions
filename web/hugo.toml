@@ -9,6 +9,11 @@ disableKinds = ["taxonomy", "term"]
   descricion = "Videoxogos clásicos traducidos ao galego. Só parches: ti pos o xogo e o parche aplícase aquí mesmo, no teu navegador."
   repo = "https://github.com/SuperPadLand/calculin-traducions"
 
+  # Doazóns: a ligazón de PayPal (paypal.me/... ou a de «Doar» de PayPal).
+  # Mentres estea baleira, o botón non aparece en ningures.
+  [params.doazons]
+    paypal = ""
+
   # Comentarios con giscus: gárdanse nas Discussions do repositorio.
   # Cada xogo ten o seu fío polo nome da ficha (non pola URL), así que
   # sobreviven a un cambio de dominio.

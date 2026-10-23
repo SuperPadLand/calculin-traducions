@@ -561,6 +561,20 @@ kbd { display: inline-block; min-width: 1.8em; padding: .15em .45em; margin-righ
 .pasos-instalar p { margin: 0; }
 .pasos-instalar code, .instalador .nota-pe code { background: var(--superficie-2); border: 1px solid var(--raia); padding: .1em .35em; border-radius: 5px; color: var(--tinta); }
 
+/* Doazóns */
+.boton-paypal {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  min-height: 44px; padding: .65em 1.2em; border-radius: 999px;
+  background: #ffc439; color: #0b2a6b; font: 700 .97rem/1.1 var(--letra); text-decoration: none;
+  box-shadow: inset 0 -2px 0 rgb(0 0 0 / .12); transition: background-color .15s, transform .15s;
+}
+.boton-paypal:hover { background: #f2b52a; color: #0b2a6b; }
+.boton-paypal:active { transform: translateY(1px); }
+.boton-paypal svg { width: 1.15em; height: 1.15em; color: #d23b3b; }
+.caixa-apoiar p { font-size: .93rem; color: var(--tinta-suave); margin-bottom: 14px; }
+.caixa-apoiar .boton-paypal { width: 100%; }
+.pe .boton-paypal { margin-top: 4px; }
+
 /* Comentarios */
 .comentarios .nota-pe { margin: -6px 0 18px; }
 .giscus { min-height: 120px; }
@@ -568,7 +582,7 @@ kbd { display: inline-block; min-width: 1.8em; padding: .15em .45em; margin-righ
 /* ---------- Pé ---------- */
 
 .pe { border-top: 1px solid var(--raia); background: var(--fondo-alterno); padding: 48px 0 28px; font-size: .93rem; color: var(--tinta-suave); }
-.pe-grella { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px 64px; }
+.pe-grella { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 28px 56px; }
 .pe-grella p { max-width: 60ch; }
 .pe-lema { margin-top: 12px; }
 .pe-titulo { font-family: var(--letra-pixel); font-weight: 400; font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--tinta); margin-bottom: .8em; }

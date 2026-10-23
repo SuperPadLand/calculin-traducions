@@ -56,6 +56,14 @@
         </ul>
       </section>
 
+      {{ with site.Params.doazons.paypal }}
+      <section class="caixa caixa-apoiar" aria-labelledby="apoiar">
+        <h2 id="apoiar">Gustouche?</h2>
+        <p>As traducións son e seguirán sendo de balde. Se che apetece apoiar o proxecto, podes facer unha doazón.</p>
+        {{ partial "doar.html" $ }}
+      </section>
+      {{ end }}
+
       <section class="caixa" aria-labelledby="datos">
         <h2 id="datos">Ficha</h2>
         <dl class="datos">

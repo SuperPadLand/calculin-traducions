@@ -25,6 +25,8 @@ As que aínda non teñen o selo están completas e pódense xogar, pero é máis
 - Se ves un texto cortado, unha falta ou algo sen traducir, [abre unha incidencia en GitHub]({{< param repo >}}/issues/new?template=erro-traducion.yml) indicando o xogo, a pantalla e, se podes, unha captura.
 - Se xogaches enteira unha tradución que aínda non está probada, cóntanolo nos comentarios da súa ficha e di onde: en que emulador ou en que consola. Así pode cambiar de selo.
 
+{{< apoiar >}}
+
 ## Aviso legal
 
 Os xogos son propiedade das súas respectivas compañías. Este proxecto non ten relación ningunha con elas, non distribúe ningún xogo nin ningunha ROM, e as traducións (textos e gráficos novos) publícanse para uso libre e non comercial.

@@ -11,6 +11,13 @@
       <h2 class="pe-titulo">Aviso</h2>
       <p>Aquí só hai parches. Non se distribúe ningún xogo: a túa copia tes que poñela ti. Os xogos son das súas compañías e este proxecto non ten relación con elas.</p>
     </div>
+    {{ with site.Params.doazons.paypal }}
+    <div>
+      <h2 class="pe-titulo">Apoiar</h2>
+      <p>As traducións son de balde. Se queres botar unha man, podes facer unha doazón.</p>
+      {{ partial "doar.html" $ }}
+    </div>
+    {{ end }}
   </div>
   <div class="envoltorio pe-baixo">
     <span>Traducións de uso libre e non comercial</span>

@@ -1,0 +1,6 @@
+{{/* Sección «Apoiar o proxecto» para as páxinas en Markdown. Só aparece se hai ligazón de PayPal. */}}
+{{ with site.Params.doazons.paypal }}
+<h2 id="apoiar">Apoiar o proxecto</h2>
+<p>As traducións son e seguirán sendo de balde, e as doazóns son voluntarias: non dan acceso a nada que non teña xa todo o mundo. Se queres axudar a que saian máis xogos en galego, podes facelo por PayPal.</p>
+{{ partial "doar.html" $ }}
+{{ end }}
