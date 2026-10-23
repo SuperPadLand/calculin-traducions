@@ -1,0 +1,12 @@
+{{/* Instrucións de instalación para os xogos de PC. Recibe a páxina do xogo. */}}
+{{ $i := .Params.instalador }}
+<section class="bloque instalador" aria-labelledby="instalar">
+  <div class="bloque-cabeceira">
+    <h2 id="instalar">Como se instala</h2>
+    <span class="etiqueta-privada">{{ $i.onde }}</span>
+  </div>
+  <ol class="pasos-instalar">
+    {{ range $i.pasos }}<li>{{ . | markdownify }}</li>{{ end }}
+  </ol>
+  {{ with $i.nota }}<p class="nota-pe">{{ . | markdownify }}</p>{{ end }}
+</section>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="gl">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <a class="saltar" href="#contido">Ir ao contido</a>
+  {{ partial "cabeceira.html" . }}
+  <main id="contido">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "pe.html" . }}
+  {{ $js := resources.Get "js/sitio.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>

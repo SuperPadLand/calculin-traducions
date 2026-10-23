@@ -1,10 +1,14 @@
 # Calculín Traducións
 
-Traducións de videoxogos retro ao **galego** (norma RAG).
+Traducións de videoxogos ao **galego** (norma RAG).
 Aquí só se distribúen **parches**: as ROMs non se inclúen nin se van incluír.
 
-*Traducciones de videojuegos retro al **gallego** (norma RAG). Aquí solo se
-distribuyen **parches**: las ROMs no se incluyen ni se van a incluir.*
+🌐 **Web: <https://superpadland.github.io/calculin-traducions/>** — cada xogo
+coas súas capturas, un parcheador que funciona no navegador e comentarios.
+
+*Traducciones de videojuegos al **gallego** (norma RAG). Aquí solo se
+distribuyen **parches**: las ROMs no se incluyen ni se van a incluir. La web
+tiene un parcheador que funciona en el navegador.*
 
 ---
 
@@ -33,9 +37,14 @@ xogos serían meses de enxeñaría inversa en vez de días de tradución.
 
 ## Traducións dispoñibles · Traducciones disponibles
 
-| Xogo | Sistema | Versión | Estado |
-|---|---|---|---|
-| [Castlevania (USA) (Rev 0)](castlevania-nes/) | NES | v1.0 | Completa. Probado enteiro en ares |
+| Xogo | Sistema | Versión | Estado | Probada por humanos |
+|---|---|---|---|---|
+| [Castlevania (USA) (Rev 0)](https://superpadland.github.io/calculin-traducions/xogos/castlevania-nes/) | NES | v1.0 | Completa | ✅ Si, xogada enteira en ares |
+| [Suzerain](https://superpadland.github.io/calculin-traducions/xogos/suzerain/) | PC (Steam, Linux) | v0.9 | Completa (Sordland) | ⏳ Aínda non |
+
+«Probada por humanos» quere dicir que unha persoa xogou o xogo enteiro coa
+tradución posta. As que aínda non o están pasaron as comprobacións
+automáticas, pero poden ter algún erro.
 
 ---
 

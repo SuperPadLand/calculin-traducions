@@ -1,0 +1,14 @@
+{{/* Galería de capturas para os xogos sen comparador. Recibe a páxina do xogo. */}}
+<section class="bloque galeria" aria-labelledby="capturas">
+  <h2 id="capturas">Capturas</h2>
+  <div class="galeria-grella">
+    {{ range $i, $c := .Params.galeria }}
+    {{ with $.Resources.Get $c.imaxe }}
+    <figure class="{{ if eq $i 0 }}galeria-grande{{ end }}">
+      <a href="{{ .RelPermalink }}"><img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $c.texto }}" loading="lazy"></a>
+      <figcaption>{{ $c.texto }}</figcaption>
+    </figure>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $xogos := .Pages.ByDate.Reverse }}
+<section class="seccion seccion-primeira">
+  <div class="envoltorio">
+    <div class="seccion-cabeceira">
+      <div>
+        <h1>Traducións</h1>
+        <p class="seccion-entrada">{{ len $xogos }} xogos en galego. As máis novas, primeiro.</p>
+      </div>
+      {{ partial "filtros.html" $xogos }}
+    </div>
+    <div class="grella-xogos" data-grella>
+      {{ range $xogos }}{{ partial "tarxeta.html" . }}{{ end }}
+    </div>
+    <p class="baleiro" data-baleiro hidden>Ningunha tradución cumpre eses filtros.</p>
+  </div>
+</section>
+{{ end }}

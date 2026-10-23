@@ -1,0 +1,105 @@
+{{ define "main" }}
+{{ $xogos := (where site.RegularPages "Section" "xogos").ByDate.Reverse }}
+{{ $probadas := where $xogos "Params.probada" true }}
+{{ $castlevania := site.GetPage "/xogos/castlevania-nes" }}
+
+<section class="heroe">
+  <div class="envoltorio heroe-grella">
+    <div class="heroe-texto">
+      <p class="antetitulo">Romhacking en galego</p>
+      <h1>Os clásicos de sempre, agora <em>en galego</em>.</h1>
+      <p class="heroe-entrada">Traducimos videoxogos ao galego, da NES ao PC. Aquí só hai parches: ti pos o xogo, e o parche aplícase no teu navegador sen instalar nada.</p>
+      <div class="heroe-botons">
+        <a class="boton boton-primario" href="#xogos">Ver as traducións</a>
+        <a class="boton boton-secundario" href="{{ "como-parchear/" | relURL }}">Como funciona</a>
+      </div>
+      <dl class="heroe-cifras">
+        <div><dt>Traducións</dt><dd>{{ len $xogos }}</dd></div>
+        <div><dt>Probadas por humanos</dt><dd>{{ len $probadas }}</dd></div>
+        <div><dt>ROMs distribuídas</dt><dd>0</dd></div>
+      </dl>
+    </div>
+    {{ with $castlevania }}
+    {{ $en := .Resources.Get "capturas/titulo-en.png" }}
+    {{ $gl := .Resources.Get "capturas/titulo-gl.png" }}
+    <a class="crt" href="{{ .RelPermalink }}" aria-label="Castlevania: pantalla de título en inglés e en galego">
+      <div class="crt-pantalla pixelada">
+        <img class="crt-en" src="{{ $en.RelPermalink }}" width="256" height="240" alt="">
+        <img class="crt-gl" src="{{ $gl.RelPermalink }}" width="256" height="240" alt="">
+        <span class="crt-etiqueta crt-etiqueta-en">Orixinal</span>
+        <span class="crt-etiqueta crt-etiqueta-gl">Galego</span>
+      </div>
+      <span class="crt-pe">Castlevania · NES</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="seccion" id="xogos">
+  <div class="envoltorio">
+    <div class="seccion-cabeceira">
+      <div>
+        <h2>Traducións</h2>
+        <p class="seccion-entrada">Cada ficha leva as capturas, a ROM exacta que precisas, o parcheador e os comentarios.</p>
+      </div>
+      {{ partial "filtros.html" $xogos }}
+    </div>
+    <div class="grella-xogos" data-grella>
+      {{ range $xogos }}{{ partial "tarxeta.html" . }}{{ end }}
+    </div>
+    <p class="baleiro" data-baleiro hidden>Ningunha tradución cumpre eses filtros.</p>
+  </div>
+</section>
+
+<section class="seccion seccion-alterna">
+  <div class="envoltorio">
+    <h2>Que quere dicir «probada por humanos»?</h2>
+    <p class="seccion-entrada">Todas as traducións pasan comprobacións automáticas antes de publicarse. Pero un xogo hai que xogalo, e iso indícao este selo.</p>
+    <div class="explica-selos">
+      <div class="explica-selo">
+        {{ partial "selo.html" (dict "Params" (dict "probada" true)) }}
+        <p>Unha persoa xogou o xogo enteiro coa tradución, de principio a fin, e non atopou textos rotos, cortados nin letras raras. É a versión 1.0 ou posterior.</p>
+      </div>
+      <div class="explica-selo">
+        {{ partial "selo.html" (dict "Params" (dict "probada" false)) }}
+        <p>A tradución está completa e superou as comprobacións automáticas (ortografía, lonxitude dos textos, que o xogo arranque), pero aínda ninguén a xogou enteira. Pode ter algún erro: se o atopas, avísanos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="envoltorio">
+    <h2>Como funciona</h2>
+    <ol class="pasos">
+      <li>
+        <span class="paso-num">1</span>
+        <h3>Consegue o xogo</h3>
+        <p>Precisas a túa propia copia: unha ROM ou o xogo comprado en Steam. Cada ficha di exactamente cal, porque a versión importa.</p>
+      </li>
+      <li>
+        <span class="paso-num">2</span>
+        <h3>Aplica o parche</h3>
+        <p>Arrastra a ROM ao parcheador da ficha. Compróbase que é a correcta e devólvese traducida. Non sae do teu ordenador en ningún momento.</p>
+      </li>
+      <li>
+        <span class="paso-num">3</span>
+        <h3>Xoga</h3>
+        <p>No teu emulador de sempre ou, nos xogos de NES, aquí mesmo no navegador, co teclado ou cun mando.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="envoltorio">
+    <div class="aviso-erro">
+      <div>
+        <h2>Atopaches un erro?</h2>
+        <p>Un texto cortado, unha falta, algo que quedou en inglés… Cóntanolo e arranxámolo na seguinte versión.</p>
+      </div>
+      <a class="boton boton-primario" href="{{ site.Params.repo }}/issues/new?template=erro-traducion.yml">Informar dun erro</a>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,14 @@
+{{/* Filtros da grella. Recibe a lista de xogos. */}}
+{{ $sistemas := slice }}
+{{ range . }}{{ $sistemas = $sistemas | append .Params.sistema }}{{ end }}
+<div class="filtros" data-filtros>
+  <div class="chips" role="group" aria-label="Filtrar por sistema">
+    <button type="button" class="chip" aria-pressed="true" data-sistema="">Todas</button>
+    {{ range uniq $sistemas }}<button type="button" class="chip" aria-pressed="false" data-sistema="{{ . }}">{{ . }}</button>{{ end }}
+  </div>
+  <label class="interruptor">
+    <input type="checkbox" data-so-probadas>
+    <span class="interruptor-pista" aria-hidden="true"></span>
+    Só probadas por humanos
+  </label>
+</div>

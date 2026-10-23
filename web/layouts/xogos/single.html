@@ -1,0 +1,103 @@
+{{ define "main" }}
+{{ $p := .Params }}
+<article class="ficha">
+  <header class="ficha-cabeceira">
+    <div class="envoltorio">
+      <nav class="migas" aria-label="Estás en"><a href="{{ "xogos/" | relURL }}">Xogos</a> <span aria-hidden="true">/</span> {{ .Title }}</nav>
+      <div class="ficha-titulo">
+        <div>
+          <p class="antetitulo">{{ $p.plataforma }} · {{ $p.ano }}</p>
+          <h1>{{ .Title }}</h1>
+          <p class="ficha-subtitulo">{{ $p.subtitulo }}</p>
+        </div>
+        <div class="ficha-selo-grande{{ if $p.probada }} si{{ else }} non{{ end }}">
+          {{ partial "selo.html" . }}
+          <p>{{ if $p.probada }}{{ $p.probada_como }}{{ else }}{{ $p.sen_probar }}{{ end }}</p>
+          {{ if $p.probada }}<p class="selo-data">Xogada enteira o {{ (time $p.probada_data).Format "02/01/2006" }}</p>{{ end }}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="envoltorio ficha-grella">
+    <div class="ficha-principal">
+      {{ if $p.comparacions }}{{ partial "comparador.html" . }}{{ else if $p.galeria }}{{ partial "galeria.html" . }}{{ end }}
+
+      <section class="bloque prosa" aria-labelledby="sobre-xogo">
+        <h2 id="sobre-xogo">Sobre a tradución</h2>
+        {{ .Content }}
+        {{ with $p.traducido }}
+        <h3>Que está traducido</h3>
+        <ul class="lista-check">{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+        {{ end }}
+        {{ with $p.sen_traducir }}
+        <h3>Que queda en inglés</h3>
+        <ul class="lista-menos">{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+        {{ end }}
+      </section>
+
+      {{ with $p.parcheador }}{{ partial "parcheador.html" $ }}{{ end }}
+      {{ with $p.instalador }}{{ partial "instalador.html" $ }}{{ end }}
+
+      {{ partial "comentarios.html" . }}
+    </div>
+
+    <aside class="ficha-lateral">
+      <section class="caixa" aria-labelledby="descargas">
+        <h2 id="descargas">Descargas</h2>
+        <ul class="descargas">
+          {{ range $p.descargas }}
+          <li>
+            <a class="descarga{{ if .destacada }} destacada{{ end }}" href="{{ if .ficheiro }}{{ .ficheiro | relURL }}{{ else }}{{ .url }}{{ end }}"{{ if .ficheiro }} download{{ end }}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11m0 0l-4.5-4.5M12 14.5l4.5-4.5M4.5 17v2.5h15V17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>{{ .nome }}</strong><small>{{ .nota }}</small></span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </section>
+
+      <section class="caixa" aria-labelledby="datos">
+        <h2 id="datos">Ficha</h2>
+        <dl class="datos">
+          <div><dt>Sistema</dt><dd>{{ $p.plataforma }}</dd></div>
+          <div><dt>Compañía</dt><dd>{{ $p.compania }}</dd></div>
+          <div><dt>Ano</dt><dd>{{ $p.ano }}</dd></div>
+          <div><dt>Xénero</dt><dd>{{ $p.xenero }}</dd></div>
+          <div><dt>Versión</dt><dd>{{ $p.version }} <span class="tenue">({{ .Date.Format "02/01/2006" }})</span></dd></div>
+          <div><dt>Estado</dt><dd>{{ $p.estado }}</dd></div>
+          <div><dt>Probada por humanos</dt><dd>{{ if $p.probada }}<span class="si">Si</span>{{ else }}<span class="non">Aínda non</span>{{ end }}</dd></div>
+          {{ range $p.creditos }}<div><dt>{{ index . 0 }}</dt><dd>{{ index . 1 | markdownify }}</dd></div>{{ end }}
+        </dl>
+      </section>
+
+      {{ with $p.rom }}
+      <section class="caixa" aria-labelledby="rom">
+        <h2 id="rom">{{ if $p.parcheador }}A ROM que precisas{{ else }}O xogo que precisas{{ end }}</h2>
+        <p class="rom-nome">{{ .nome }}</p>
+        {{ with .nota }}<p class="rom-nota">{{ . | markdownify }}</p>{{ end }}
+        {{ if .md5 }}
+        <dl class="sumas">
+          <div><dt>CRC32</dt><dd><code>{{ .crc32 }}</code></dd></div>
+          <div><dt>MD5</dt><dd><code>{{ .md5 }}</code></dd></div>
+          <div><dt>Tamaño</dt><dd>{{ .tamano }}</dd></div>
+        </dl>
+        {{ end }}
+      </section>
+      {{ end }}
+
+      <a class="caixa caixa-erro" href="{{ site.Params.repo }}/issues/new?template=erro-traducion.yml&xogo={{ printf "%s (%s)" .Title $p.sistema | urlquery }}&version={{ $p.version | urlquery }}">
+        <strong>Atopaches un erro?</strong>
+        <span>Cóntanolo nunha incidencia de GitHub →</span>
+      </a>
+    </aside>
+  </div>
+</article>
+{{ end }}
+
+{{ define "scripts" }}
+{{ if or .Params.parcheador .Params.comparacions }}
+{{ $js := resources.Get "js/ficha.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
+{{ end }}

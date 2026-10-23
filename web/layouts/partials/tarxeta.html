@@ -1,0 +1,20 @@
+{{/* Tarxeta dun xogo para as listas. Recibe a páxina do xogo. */}}
+<article class="tarxeta" data-sistema="{{ .Params.sistema }}" data-probada="{{ if .Params.probada }}si{{ else }}non{{ end }}">
+  <a class="tarxeta-ligazon" href="{{ .RelPermalink }}">
+    <div class="tarxeta-imaxe{{ if .Params.pixelada }} pixelada{{ end }}">
+      {{ with .Resources.Get .Params.portada }}
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Title }} en galego" loading="lazy">
+      {{ end }}
+      <span class="tarxeta-sistema">{{ .Params.sistema }}</span>
+    </div>
+    <div class="tarxeta-corpo">
+      <h3 class="tarxeta-titulo">{{ .Title }}</h3>
+      <p class="tarxeta-meta">{{ .Params.compania }} · {{ .Params.ano }} · v{{ .Params.version }}</p>
+      <p class="tarxeta-resumo">{{ .Params.subtitulo }}</p>
+      <div class="tarxeta-pe">
+        {{ partial "selo.html" . }}
+        <span class="tarxeta-estado">{{ .Params.estado }}</span>
+      </div>
+    </div>
+  </a>
+</article>

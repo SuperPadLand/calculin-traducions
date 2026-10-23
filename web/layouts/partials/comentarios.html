@@ -1,0 +1,15 @@
+{{/* Comentarios con giscus (GitHub Discussions). Un fío por xogo, polo nome da ficha. */}}
+{{ $g := site.Params.giscus }}
+<section class="bloque comentarios" aria-labelledby="comentar">
+  <div class="bloque-cabeceira">
+    <h2 id="comentar">Comentarios</h2>
+  </div>
+  <p class="nota-pe">Para comentar precísase unha conta de GitHub (é de balde). Os comentarios gárdanse no foro do proxecto.</p>
+  <div class="giscus" data-giscus
+    data-repo="{{ $g.repo }}"
+    data-repo-id="{{ $g.repoId }}"
+    data-category="{{ $g.categoria }}"
+    data-category-id="{{ $g.categoriaId }}"
+    data-term="{{ .Params.comentarios | default .File.ContentBaseName }}"
+    data-lang="{{ $g.lingua }}"></div>
+</section>

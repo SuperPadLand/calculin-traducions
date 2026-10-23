@@ -1,0 +1,12 @@
+{{/* Selo «probada por humanos». Recibe a páxina do xogo. */}}
+{{ if .Params.probada }}
+<span class="selo selo-si" title="Unha persoa xogou esta tradución de principio a fin">
+  <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".18"/><path d="M5.5 10.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Probada por humanos
+</span>
+{{ else }}
+<span class="selo selo-non" title="Pasou as comprobacións automáticas, pero aínda ninguén a xogou enteira">
+  <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor" opacity=".18"/><path d="M10 5.2v5.3l3.2 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Sen probar por humanos
+</span>
+{{ end }}

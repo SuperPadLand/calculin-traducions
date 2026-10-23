@@ -1,0 +1,25 @@
+{{/* Comparador antes/despois con pestanas. Recibe a páxina do xogo. */}}
+{{ $p := .Params }}
+<section class="bloque comparador" data-comparador aria-labelledby="comparar">
+  <div class="bloque-cabeceira">
+    <h2 id="comparar">Antes e despois</h2>
+    <div class="pestanas" role="tablist" aria-label="Pantallas">
+      {{ range $i, $c := $p.comparacions }}
+      <button type="button" role="tab" class="pestana" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-pestana="{{ $i }}">{{ $c.nome }}</button>
+      {{ end }}
+    </div>
+  </div>
+  {{ range $i, $c := $p.comparacions }}
+  {{ $en := $.Resources.Get $c.orixinal }}
+  {{ $gl := $.Resources.Get $c.galego }}
+  <div class="comparador-marco{{ if $p.pixelada }} pixelada{{ end }}" data-panel="{{ $i }}"{{ if ne $i 0 }} hidden{{ end }} style="--pos: 50%; aspect-ratio: {{ $en.Width }} / {{ $en.Height }}">
+    <img class="comp-en" src="{{ $en.RelPermalink }}" width="{{ $en.Width }}" height="{{ $en.Height }}" alt="{{ $c.nome }} no orixinal en inglés" loading="lazy">
+    <img class="comp-gl" src="{{ $gl.RelPermalink }}" width="{{ $gl.Width }}" height="{{ $gl.Height }}" alt="{{ $c.nome }} en galego" loading="lazy">
+    <span class="comp-etiqueta comp-etiqueta-en">Orixinal</span>
+    <span class="comp-etiqueta comp-etiqueta-gl">Galego</span>
+    <span class="comp-divisor" aria-hidden="true"><span class="comp-asa"></span></span>
+    <input class="comp-rango" type="range" min="0" max="100" value="50" aria-label="Mover a liña entre o orixinal e o galego">
+  </div>
+  {{ end }}
+  <p class="nota-pe">Arrastra a liña para comparar. Capturas sacadas do emulador co parche aplicado.</p>
+</section>

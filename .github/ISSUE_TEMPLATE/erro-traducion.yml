@@ -1,0 +1,49 @@
+name: Erro na tradución
+description: Un texto cortado, unha falta, unha letra rara ou algo que quedou sen traducir
+title: "[Erro] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazas por avisar! Canto máis concreto, antes se arranxa.
+  - type: dropdown
+    id: xogo
+    attributes:
+      label: Xogo
+      options:
+        - Castlevania (NES)
+        - Suzerain (PC)
+        - Outro
+    validations:
+      required: true
+  - type: input
+    id: onde
+    attributes:
+      label: Onde aparece?
+      description: A pantalla, a fase, a conversa, o menú…
+      placeholder: "Por exemplo: fase 3, ao morrer; ou Turno 4, conversa con Petr"
+    validations:
+      required: true
+  - type: textarea
+    id: agora
+    attributes:
+      label: Que pon agora?
+      description: Copia o texto tal e como sae, ou describe o problema.
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Como debería poñer?
+      description: Opcional. Se tes unha proposta, benvida sexa.
+  - type: textarea
+    id: captura
+    attributes:
+      label: Captura
+      description: Opcional. Podes pegar ou arrastrar a imaxe aquí.
+  - type: input
+    id: version
+    attributes:
+      label: Versión do parche
+      placeholder: "1.0"

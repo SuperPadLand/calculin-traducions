@@ -1,0 +1,66 @@
+{{/* Parcheador no navegador. Recibe a páxina do xogo; a configuración vai en .Params.parcheador. */}}
+{{ $c := .Params.parcheador }}
+{{ $cfg := dict
+  "parche" ($c.parche | relURL)
+  "sha1Entrada" $c.sha1_entrada
+  "sha1Saida" $c.sha1_saida
+  "cabeceira" $c.cabeceira
+  "tamano" $c.tamano_sen_cabeceira
+  "saida" $c.saida
+  "extension" $c.extension
+  "xogable" $c.xogable
+  "jsnes" ("vendor/jsnes/jsnes.min.js" | relURL)
+}}
+<section class="bloque parcheador" aria-labelledby="parchear">
+  <div class="bloque-cabeceira">
+    <h2 id="parchear">Parchear aquí mesmo</h2>
+    <span class="etiqueta-privada">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 9V6.5a4 4 0 0 1 8 0V9M4.5 9h11v8h-11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      A ROM non sae do teu ordenador
+    </span>
+  </div>
+  <div class="parcheador-caixa" data-parcheador="{{ $cfg | jsonify }}">
+    <label class="zona-soltar" data-zona>
+      <input type="file" accept="{{ $c.extension }},.zip" data-ficheiro>
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="6" width="30" height="36" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M15 6v8h18V6M17 30h14M17 35h9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span class="zona-titulo">Arrastra aquí a túa ROM</span>
+      <span class="zona-texto">ou <u>escolle o ficheiro</u> · {{ $c.extension }} ou .zip</span>
+    </label>
+    <ol class="estado-pasos" data-pasos hidden>
+      <li data-paso="ler">Ler o ficheiro</li>
+      <li data-paso="comprobar">Comprobar que é a ROM correcta</li>
+      <li data-paso="parchear">Aplicar a tradución</li>
+      <li data-paso="verificar">Verificar o resultado</li>
+    </ol>
+    <div class="parcheador-resultado" data-resultado hidden>
+      <p class="resultado-texto" data-mensaxe></p>
+      <div class="resultado-botons">
+        <a class="boton boton-primario" data-descargar hidden>Descargar {{ $c.saida }}</a>
+        {{ if $c.xogable }}<button type="button" class="boton boton-secundario" data-xogar hidden>Xogar no navegador</button>{{ end }}
+        <button type="button" class="boton boton-texto" data-outra>Probar con outra ROM</button>
+      </div>
+    </div>
+  </div>
+  <p class="nota-pe">Compróbase o contido da ROM, non a cabeceira, así que vale aínda que a túa copia teña unha cabeceira distinta. Se prefires facelo á man, tes os parches en «Descargas».</p>
+</section>
+
+{{ if $c.xogable }}
+<dialog class="xogar" data-dialogo-xogo aria-labelledby="xogar-titulo">
+  <div class="xogar-cabeceira">
+    <h2 id="xogar-titulo">{{ .Title }} en galego</h2>
+    <button type="button" class="boton-icona" data-pechar aria-label="Pechar o xogo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="xogar-pantalla" data-pantalla-xogo tabindex="-1"></div>
+  <ul class="xogar-controis">
+    <li><kbd>←</kbd><kbd>↑</kbd><kbd>→</kbd><kbd>↓</kbd> moverse</li>
+    <li><kbd>X</kbd> botón A</li>
+    <li><kbd>Z</kbd> botón B</li>
+    <li><kbd>Intro</kbd> Start</li>
+    <li><kbd>Ctrl</kbd> dereito: Select</li>
+    <li>Tamén vale un mando</li>
+  </ul>
+  <p class="nota-pe">Emulación sinxela para probar a tradución. Para unha partida longa, mellor un emulador como <a href="https://ares-emu.net/">ares</a> ou <a href="https://www.mesen.ca/">Mesen</a>.</p>
+</dialog>
+{{ end }}

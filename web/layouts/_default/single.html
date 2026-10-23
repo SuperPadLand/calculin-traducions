@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="seccion seccion-primeira">
+  <div class="envoltorio estreito">
+    <header class="paxina-cabeceira">
+      {{ with .Params.antetitulo }}<p class="antetitulo">{{ . }}</p>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitulo }}<p class="seccion-entrada">{{ . }}</p>{{ end }}
+    </header>
+    <div class="prosa">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

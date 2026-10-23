@@ -1,0 +1,38 @@
+baseURL = "https://superpadland.github.io/calculin-traducions/"
+locale = "gl"
+defaultContentLanguage = "gl"
+title = "Calculín Traducións"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  descricion = "Videoxogos clásicos traducidos ao galego. Só parches: ti pos o xogo e o parche aplícase aquí mesmo, no teu navegador."
+  repo = "https://github.com/SuperPadLand/calculin-traducions"
+
+  # Comentarios con giscus: gárdanse nas Discussions do repositorio.
+  # Cada xogo ten o seu fío polo nome da ficha (non pola URL), así que
+  # sobreviven a un cambio de dominio.
+  [params.giscus]
+    repo = "SuperPadLand/calculin-traducions"
+    repoId = "R_kgDOUFMedw"
+    categoria = "Announcements"
+    categoriaId = "DIC_kwDOUFMed84DJcGw"
+    # giscus aínda non ten galego
+    lingua = "es"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["html", "rss"]
+  section = ["html"]
+
+# Os parches sérvense directamente desde as carpetas de cada tradución,
+# sen copialos: así a web e as releases non poden desincronizarse.
+[[module.mounts]]
+  source = "static"
+  target = "static"
+[[module.mounts]]
+  source = "../castlevania-nes"
+  target = "static/parches/castlevania-nes"
+  files = ["castlevania_galego.ips", "castlevania_galego.bps"]
