@@ -12,7 +12,7 @@ disableKinds = ["taxonomy", "term"]
   # Doazóns: a ligazón de PayPal (paypal.me/... ou a de «Doar» de PayPal).
   # Mentres estea baleira, o botón non aparece en ningures.
   [params.doazons]
-    paypal = ""
+    paypal = "https://paypal.me/Calculinpizza"
 
   # Comentarios con giscus: gárdanse nas Discussions do repositorio.
   # Cada xogo ten o seu fío polo nome da ficha (non pola URL), así que
