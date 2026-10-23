@@ -1,0 +1,21 @@
+{{/* Detalle de «probada por humanos» na cabeceira da ficha. Recibe a páxina do xogo.
+     Nos xogos de consola, .Params.probas leva dúas listas: emuladores e hardware real
+     (cada entrada: nome e, opcional, data). En PC non hai probas: abonda con probada e probada_data. */}}
+{{ $p := .Params }}
+<p>{{ if $p.probada }}Unha persoa xogouna enteira, de principio a fin, sen atopar textos rotos nin letras raras.{{ else }}{{ $p.sen_probar }}{{ end }}</p>
+{{ with $p.probas }}
+<dl class="probas">
+  {{ range slice (dict "titulo" "Emuladores" "lista" .emuladores) (dict "titulo" "Hardware real" "lista" .hardware) }}
+  <div class="proba{{ if .lista }} feita{{ end }}">
+    <dt>
+      {{ if .lista }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      {{ else }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 10h8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>{{ end }}
+      {{ .titulo }}
+    </dt>
+    <dd>{{ range $i, $e := .lista }}{{ if $i }}, {{ end }}<strong>{{ $e.nome }}</strong>{{ with $e.data }} <span class="tenue">({{ (time .).Format "02/01/2006" }})</span>{{ end }}{{ else }}Aínda non{{ end }}</dd>
+  </div>
+  {{ end }}
+</dl>
+{{ else }}
+{{ with $p.probada_data }}<p class="selo-data">Xogada enteira o {{ (time .).Format "02/01/2006" }}</p>{{ end }}
+{{ end }}

@@ -327,6 +327,10 @@ code, kbd { font-family: var(--mono); font-size: .88em; }
 .tarxeta-titulo { font-size: 1.4rem; margin-bottom: .15em; }
 .tarxeta-meta { font-size: .88rem; color: var(--tinta-tenue); margin-bottom: .7em; }
 .tarxeta-resumo { color: var(--tinta-suave); font-size: .97rem; margin-bottom: 1.1em; }
+.tarxeta-probas { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: -.3em 0 1em; font-size: .82rem; color: var(--tinta-tenue); }
+.tarxeta-probas span::before { content: "–"; display: inline-block; width: 1.1em; font-weight: 700; }
+.tarxeta-probas span.feita { color: var(--si); font-weight: 600; }
+.tarxeta-probas span.feita::before { content: "✓"; }
 .tarxeta-pe { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
 .tarxeta-estado { font-size: .85rem; color: var(--tinta-tenue); }
 
@@ -380,6 +384,13 @@ code, kbd { font-family: var(--mono); font-size: .88em; }
 .ficha-selo-grande .selo { font-size: 1rem; padding: 0; background: none; margin-bottom: 10px; }
 .ficha-selo-grande p { font-size: .93rem; color: var(--tinta-suave); margin: 0; }
 .ficha-selo-grande .selo-data { margin-top: .6em; font-weight: 600; color: var(--tinta); }
+.probas { margin: 14px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.proba { display: grid; grid-template-columns: 9.2em 1fr; gap: 10px; align-items: baseline; font-size: .93rem; padding-top: 8px; border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent); }
+.proba dt { display: inline-flex; align-items: center; gap: .4em; font-weight: 650; color: var(--tinta-tenue); }
+.proba dt svg { width: 1.05em; height: 1.05em; flex: none; }
+.proba.feita dt { color: var(--si); }
+.proba dd { margin: 0; color: var(--tinta-suave); }
+.proba.feita dd { color: var(--tinta); }
 @media (max-width: 860px) { .ficha-titulo { grid-template-columns: 1fr; } .ficha-selo-grande { max-width: none; } }
 
 .ficha-grella { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 32px 40px; padding-block: 36px 72px; align-items: start; }
@@ -557,7 +568,8 @@ kbd { display: inline-block; min-width: 1.8em; padding: .15em .45em; margin-righ
 /* ---------- Pé ---------- */
 
 .pe { border-top: 1px solid var(--raia); background: var(--fondo-alterno); padding: 48px 0 28px; font-size: .93rem; color: var(--tinta-suave); }
-.pe-grella { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 28px 48px; }
+.pe-grella { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px 64px; }
+.pe-grella p { max-width: 60ch; }
 .pe-lema { margin-top: 12px; }
 .pe-titulo { font-family: var(--letra-pixel); font-weight: 400; font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--tinta); margin-bottom: .8em; }
 .pe-baixo { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--raia); font-size: .85rem; color: var(--tinta-tenue); }

@@ -8,25 +8,22 @@ subtitulo: "Videoxogos traducidos ao galego, por gusto, para quen os queira xoga
 
 Traducimos videoxogos ao galego seguindo a norma da Real Academia Galega. Empezamos polos clásicos da NES e xa chegamos ao PC. As traducións son de balde e de uso libre, e só se publican parches: o xogo tes que poñelo ti.
 
+## Feitas con intelixencia artificial
+
+Non enganamos a ninguén: **as traducións fanse con IA** (Claude, de Anthropic). A IA traduce os textos e fai o traballo técnico, desde meter o texto na ROM ata debuxar as letras que lle faltan á fonte do xogo. Grazas a iso podemos traducir xogos que doutro xeito nunca chegarían ao galego.
+
 ## «Probada por humanos»
 
 Antes de publicar, cada tradución pasa comprobacións automáticas: que cada texto cabe no seu oco, que a ortografía é correcta, que o xogo arranca e que os textos se ven. Pero iso non substitúe xogar.
 
-Por iso cada ficha di claramente se **unha persoa xogou o xogo enteiro coa tradución posta**. As que aínda non o teñen están completas e pódense xogar, pero é máis doado que teñan algún erro. Cando alguén as xoga de principio a fin, cambian de selo e pasan á versión 1.0.
+Por iso cada ficha di claramente se **unha persoa xogou o xogo enteiro coa tradución posta**. Nos xogos de consola indícase ademais onde: en que emuladores se completou e se se xogou tamén en **hardware real**, é dicir, na consola de verdade. Nos de PC non fai falta.
 
-## Grazas a Wave
-
-As traducións de consola apóianse no traballo que [Wave](https://github.com/sewave) (Sergio López Cantero, *Traduccións Wave*) liberou para todo o mundo:
-
-- [Hextractor](https://github.com/sewave/hextractor), a ferramenta coa que se extrae e se insire o texto das ROMs.
-- [A documentación dos seus proxectos](https://github.com/sewave/translations): as táboas de caracteres, os enderezos dos textos e os tiles dos acentos.
-
-Iso é a parte máis traballosa do romhacking e el deixouna aberta. Sen ese traballo previo, cada xogo levaría meses de enxeñaría inversa en vez de días de tradución.
+As que aínda non teñen o selo están completas e pódense xogar, pero é máis doado que teñan algún erro. Cando alguén as xoga de principio a fin, cambian de selo e pasan á versión 1.0.
 
 ## Atopaches un erro? Queres axudar?
 
 - Se ves un texto cortado, unha falta ou algo sen traducir, [abre unha incidencia en GitHub]({{< param repo >}}/issues/new?template=erro-traducion.yml) indicando o xogo, a pantalla e, se podes, unha captura.
-- Se xogaches enteira unha tradución que aínda non está probada, cóntanolo nos comentarios da súa ficha: así pode cambiar de selo.
+- Se xogaches enteira unha tradución que aínda non está probada, cóntanolo nos comentarios da súa ficha e di onde: en que emulador ou en que consola. Así pode cambiar de selo.
 
 ## Aviso legal
 

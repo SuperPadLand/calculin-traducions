@@ -12,8 +12,7 @@
         </div>
         <div class="ficha-selo-grande{{ if $p.probada }} si{{ else }} non{{ end }}">
           {{ partial "selo.html" . }}
-          <p>{{ if $p.probada }}{{ $p.probada_como }}{{ else }}{{ $p.sen_probar }}{{ end }}</p>
-          {{ if $p.probada }}<p class="selo-data">Xogada enteira o {{ (time $p.probada_data).Format "02/01/2006" }}</p>{{ end }}
+          {{ partial "probas.html" . }}
         </div>
       </div>
     </div>

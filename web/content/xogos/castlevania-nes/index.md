@@ -11,8 +11,12 @@ version: "1.0"
 estado: "Completa"
 
 probada: true
-probada_data: 2026-08-28
-probada_como: "Xogouse enteira, de principio a fin, no emulador ares, sen atopar ningún texto roto nin ningunha letra rara."
+# en que se xogou enteira: emuladores e hardware real (a consola de verdade)
+probas:
+  emuladores:
+    - nome: "ares"
+      data: 2026-08-28
+  hardware: []
 
 portada: "capturas/titulo-gl.png"
 pixelada: true
@@ -67,7 +71,7 @@ descargas:
     url: "https://github.com/SuperPadLand/calculin-traducions/releases/download/v1.0/Castlevania-galego-v1.0.zip"
 
 creditos:
-  - ["Tradución", "Calculín Traducións"]
+  - ["Tradución", "Calculín Traducións, con IA (Claude)"]
   - ["Ferramentas", "[Wave](https://github.com/sewave) (Hextractor e a súa documentación)"]
 ---
 
@@ -76,3 +80,5 @@ Simon Belmont entra no castelo de Drácula cun látego e pouco máis: dezaoito f
 O difícil foi o gráfico. A fonte de Castlevania non ten nin **X** nin **Z**, e o galego precisa as dúas (XOGADOR, XEFE, LICENZA). Debuxáronse de novo sobre letras que o xogo non usa: o X ocupa o sitio do K no marcador e o Z o do W na pantalla de título. O **É** é o que debuxou Wave para a súa tradución ao castelán, reaproveitado tal cal.
 
 Os enderezos que documentou Wave eran doutra revisión da ROM, así que houbo que buscar cada texto orixinal na revisión 0 antes de inserir nada.
+
+A tradución e o romhacking fixéronse con intelixencia artificial; despois, unha persoa xogou o xogo enteiro para comprobar que todo se ve ben.

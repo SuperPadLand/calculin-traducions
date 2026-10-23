@@ -11,6 +11,12 @@
       <h3 class="tarxeta-titulo">{{ .Title }}</h3>
       <p class="tarxeta-meta">{{ .Params.compania }} · {{ .Params.ano }} · v{{ .Params.version }}</p>
       <p class="tarxeta-resumo">{{ .Params.subtitulo }}</p>
+      {{ with .Params.probas }}
+      <p class="tarxeta-probas">
+        <span{{ if .emuladores }} class="feita"{{ end }}>Emulador</span>
+        <span{{ if .hardware }} class="feita"{{ end }}>Hardware real</span>
+      </p>
+      {{ end }}
       <div class="tarxeta-pe">
         {{ partial "selo.html" . }}
         <span class="tarxeta-estado">{{ .Params.estado }}</span>

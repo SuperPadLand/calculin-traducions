@@ -53,11 +53,11 @@ descargas:
     destacada: true
 
 creditos:
-  - ["Tradución", "Calculín Traducións, a partir da súa [versión en castelán](https://github.com/SuperPadLand/suzerain-castellano)"]
+  - ["Tradución", "Calculín Traducións, con IA (Claude), a partir da súa [versión en castelán](https://github.com/SuperPadLand/suzerain-castellano)"]
 ---
 
 Suzerain é un xogo de política sen disparos: es Anton Rayne, presidente recén elixido de Sordland, un país que acaba de saír dunha ditadura, e cada conversa cos ministros, os xornalistas ou a túa familia vai decidindo que tipo de goberno fas. Ten moitísimo texto, e todo importa.
 
-Está traducida toda a historia de Sordland, que é o xogo base. Fíxose a partir da tradución ao castelán do mesmo proxecto, xa revisada, coidando o trato: os ministros tratan o presidente de *vostede*, e a familia e os amigos, de *ti*.
+Está traducida toda a historia de Sordland, que é o xogo base. Fíxose con intelixencia artificial a partir da tradución ao castelán do mesmo proxecto, xa revisada, coidando o trato: os ministros tratan o presidente de *vostede*, e a familia e os amigos, de *ti*.
 
 Se tes posta a tradución ao castelán, o instalador galego aproveita os ficheiros orixinais que gardou ela. Para pasar do galego ao castelán, desinstala antes o galego.
